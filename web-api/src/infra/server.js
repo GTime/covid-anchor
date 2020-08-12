@@ -1,4 +1,5 @@
 const express = require("express");
+const storyRoute = require("../modules/story/route");
 
 // Setup Variables
 const port = 4000;
@@ -12,14 +13,7 @@ const server = async () => {
   app.use(express.json());
 
   // Routes
-  app.post("/story", (req, res) => {
-    console.log(req.body);
-
-    res.send(`
-    <h1>Hey, story here</h1>
-    <video controls></video>
-    `);
-  });
+app.use("/story", storyRoute)
 
   app.listen(port, () => {
     console.table({
