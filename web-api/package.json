@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/GTime/covid-anchor#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.9.29"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
