@@ -1,18 +1,10 @@
-// Sterilize
-const sterilize = (data) => (typeof data == "string" ? data.trim() : data);
-const sterilizeMany = (obj) => {
-  for (const key in obj) {
-    obj[key] = sterilize(obj[key]);
-  }
-
-  return obj;
-};
+const { sterilizeMany } = require("../../shared/sterilize");
 
 // Validate
 const validateStory = (unvalidateStory) => {
   let errMgs = "";
   let data = sterilizeMany(unvalidateStory);
-
+  
   if (!data.title) errMgs += "Title is required. ";
   if (!data.content) errMgs += "Content is required. ";
   if (data.image && typeof data.image !== "string") {

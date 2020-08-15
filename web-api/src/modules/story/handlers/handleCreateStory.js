@@ -19,12 +19,12 @@ const handleCreateStory = async (req, res) => {
       },
     });
 
+
     return;
   }
 
   // Save in persistence(Database)
   const story = await Story.create(storyOrError.data);
-  console.log(story);
 
   // Checking if story was created
   if (!story) {
